@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classificador de Imagens</title>
+</head>
+<body>
+    <h1>Classificador de Imagens</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul style="color:red;">
+          {% for category, message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Classificar</button>
+    </form>
+
+    {% if result %}
+        <h2>Resultado: {{ result }} ({{ (confidence*100)|round(2) }}% de confiança)</h2>
+    {% endif %}
+</body>
+</html>

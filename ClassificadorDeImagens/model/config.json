@@ -1,0 +1,7 @@
+{
+  "app_name": "ClassificadorDeImagens",
+  "version": "1.0.0",
+  "author": "Seu Nome",
+  "max_upload_size_mb": 5,
+  "allowed_extensions": ["png", "jpg", "jpeg", "gif"]
+}
